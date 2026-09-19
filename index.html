@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HTML Markdown Converter</title>
+<meta name="color-scheme" content="light dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="title-block">
+      <h1>HTML Markdown <em>Converter</em></h1>
+      <p>Write on the left, watch it become HTML in the middle, and read it the way it'll actually look on the right.</p>
+    </div>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+      <span id="theme-icon">🌙</span>
+      <span id="theme-label">Dark</span>
+    </button>
+  </header>
+
+  <div class="toolbar">
+    <button id="btn-sample" type="button">✨ Load a sample</button>
+    <button id="btn-clear" type="button">🗑 Clear</button>
+    <button id="btn-copy-html" type="button">⧉ Copy HTML</button>
+    <button id="btn-download" type="button" class="primary">⬇ Download .html</button>
+    <div class="spacer"></div>
+    <span class="status-pill" id="status-pill">Copied!</span>
+  </div>
+
+  <div class="grid">
+
+    <section class="panel">
+      <div class="panel-head">
+        <span class="dot"></span>
+        <h2>MARKDOWN INPUT</h2>
+        <span class="count" id="word-count">0 words</span>
+      </div>
+      <div class="panel-body">
+        <textarea id="markdown-input" placeholder="# Start typing here…
+
+Try **bold**, _italics_, [links](https://example.com), lists, > quotes, and `code`." spellcheck="false"></textarea>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <span class="dot" style="background:var(--lavender); box-shadow:0 0 0 4px color-mix(in srgb, var(--lavender) 18%, transparent);"></span>
+        <h2>RAW HTML OUTPUT</h2>
+        <span class="count" id="char-count">0 chars</span>
+      </div>
+      <div class="panel-body">
+        <pre id="html-output"><span class="empty-hint">Your generated HTML will show up here…</span></pre>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <span class="dot" style="background:var(--sage-deep); box-shadow:0 0 0 4px color-mix(in srgb, var(--sage-deep) 18%, transparent);"></span>
+        <h2>LIVE PREVIEW</h2>
+      </div>
+      <div class="panel-body">
+        <div id="preview"><span class="empty-hint">Your preview will render here…</span></div>
+      </div>
+    </section>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
